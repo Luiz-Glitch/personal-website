@@ -6,45 +6,44 @@
 		<hr class="my-6 border-t-4 border-red-700 w-full max-w-full" />
 	</div>
 
-	<div class="gap-14">
+	<div class="flex flex-col gap-14">
+		{% for project in projects %}
 		<div class="flex w-full h-[600px] gap-12 items-stretch bg-gray-50">
 			<div class="relative flex w-1/2 p-14 bg-red-700">
-				<img src="" class="w-full min-h-80 bg-white self-center object-contain" />
+				<img src="{{ project.image.url }}" class="w-full min-h-80 bg-white self-center object-contain" />
 				<!-- <p class="absolute top-4 left-4 py-2 px-4 text-sm border-gray-50 border-2 bg-gray-900 text-gray-50">2024 - Present</p> -->
-				<button href="#" class="absolute top-4 left-4 flex gap-2 py-2 px-4 items-center text-sm bg-red-900 text-gray-50
+				<a href="{{ project.url }}" target="_blank" class="absolute top-4 left-4 flex gap-2 py-2 px-4 items-center text-sm bg-red-900 text-gray-50
 					 hover:underline hover:shadow-lg hover:translate-y-[-1px] hover:translate-x-[-1px]
-					  transition-transform duration-300">
+						transition-transform duration-300">
 					<p>Ver mais</p>
 					<ion-icon class="rotate-45" name="link-outline"></ion-icon>
-				</button>
+				</a>
 
 			</div>
 			<div class="relative flex flex-col w-1/2 py-4 pr-8 self-center">
 				<div>
-					<h3 class="mb-6 text-3xl leading-tight">LMA: Lesion Mapping Assistant</h3>
+					<h3 class="mb-6 text-3xl leading-tight">{{ project.name }}</h3>
 					<p class="text-lg">
-						Desenvolvi uma aplicação móvel chamada Assistente de Mapeamento de Lesões (LMA) para ajudar profissionais
-						de saúde a identificar e mapear lesões. Utilizando React Native e APIs de inteligência artificial, a
-						aplicação permite captura de imagens, análise automática e geração de relatórios. Minhas responsabilidades
-						incluíram design da interface, implementação de funcionalidades e testes.
+						{{ project.description }}
 					</p>
 				</div>
 				<div class="w-full mt-8">
 					<div class="w-full border-b-2 border-gray-300 py-4 flex justify-between items-center gap-14">
 						<span class="text-lg font-medium">Cargo</span>
-						<span class="text-lg">Software Developer</span>
+						<span class="text-lg text-end">{{ project.role }}</span>
 					</div>
 					<div class="w-full border-b-2 border-gray-300 py-4 flex justify-between items-center gap-14">
 						<span class="text-lg font-medium">Empresa</span>
-						<span class="text-lg">Tech Solutions Inc.</span>
+						<span class="text-lg text-end">{{ project.organization.name }}</span>
 					</div>
 					<div class="w-full border-b-2 border-gray-300 py-4 flex justify-between items-center gap-14">
 						<span class="text-lg font-medium">Período</span>
-						<span class="text-lg">2024 - Present</span>
+						<span class="text-lg text-end">{{ project.start_date }} - {{ project.end_date }}</span>
 					</div>
 				</div>
 			</div>
 		</div>
+		{% endfor %}
 	</div>
 </section>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.db import models
+from portfolio.utils import upload_project_image
 
-# Create your models here.
+
 class Organization(models.Model):
     name = models.CharField(max_length=255)
 
@@ -10,8 +11,8 @@ class Project(models.Model):
     role = models.CharField(max_length=255)
     organization = models.ForeignKey(Organization, blank=True, null=True, on_delete=models.SET_NULL)
     start_date = models.DateField()
-    end_date = models.DateField()
-    image = models.ImageField(blank=True, null=True)
+    end_date = models.DateField(null=True, blank=True)
+    image = models.ImageField(upload_to=upload_project_image)
     url = models.URLField(blank=True, null=True)
     certificate = models.FileField(blank=True, null=True)
 
