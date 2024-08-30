@@ -38,7 +38,14 @@
 					</div>
 					<div class="w-full border-b-2 border-gray-300 py-4 flex justify-between items-center gap-14">
 						<span class="text-lg font-medium">Período</span>
-						<span class="text-lg text-end">{{ project.start_date }} - {{ project.end_date }}</span>
+						<span class="text-lg text-end">
+							{{ project.start_date|date:"F Y" }} -
+							{% if project.end_date %}
+							{{ project.end_date|date:"F Y" }}
+							{% else %}
+							Presente
+							{% endif %}
+						</span>
 					</div>
 				</div>
 			</div>
