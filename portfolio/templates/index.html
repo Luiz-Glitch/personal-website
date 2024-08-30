@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+<div class="flex h-full w-full items-center justify-between">
+	<section class="max-w-md items-center">
+		<h2 class="font-bold text-6xl leading-tight mb-7">Hello, my name is Luiz!</h2>
+		<p>
+			Welcome to my personal website! Here, you'll find
+			a showcase of my projects, skills, and a bit about
+			who I am. Dive in to learn more about my journey and
+			what I love to do!
+		</p>
+	</section>
+
+	<img src="{% static 'images/me.png' %}" alt="" class="self-end h-full pt-20">
+</div>
+{% endblock %}
