@@ -10,6 +10,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
 		rel="stylesheet">
+	<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
 	<style>
 		body {
 			font-family: 'Lora', serif;
@@ -30,7 +31,7 @@
 			<div class="flex gap-x-12">
 				<a href="{% url 'education' %}" class="font-semibold leading-6 hover:text-red-700">Educação</a>
 				<a href="{% url 'blog' %}" class="font-semibold leading-6 hover:text-red-700">Blog</a>
-				<a href="#" class="font-semibold leading-6 hover:text-red-700">Sobre mim</a>
+				<a href="{% url 'about' %}" class="font-semibold leading-6 hover:text-red-700">Sobre mim</a>
 			</div>
 			<div class="flex flex-1 justify-end items-center gap-6">
 				<div>

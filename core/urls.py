@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+from blog.views import about_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("portfolio.urls")),
     path("blog/", include("blog.urls")),
+    path("about/", about_view, name="about")
 ]
 
 if settings.DEBUG:
